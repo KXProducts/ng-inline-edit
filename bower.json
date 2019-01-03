@@ -1,7 +1,7 @@
 {
   "name": "ng-inline-edit",
   "description": "Simple inline editing for HTML elements",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "main": [
     "dist/ng-inline-edit.js",
     "dist/ng-inline-edit.css"
@@ -18,7 +18,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/tameraydin/ng-inline-edit.git"
+    "url": "git://github.com/KXProducts/ng-inline-edit.git"
   },
   "homepage": "http://tamerayd.in/ng-inline-edit",
   "authors": [
