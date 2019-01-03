@@ -119,9 +119,10 @@
           if (!$scope.validating) {
             switch (event.keyCode) {
               case 13: // ENTER
-                if ($scope.isInputTextarea) {
+                if ($scope.isInputTextarea && !$scope.keepEnterSave) {
                   return;
                 }
+                $scope.inputValue=$scope.inputValue.replace(/(?:\r\n|\r|\n)/g, '');
                 $scope.applyText(false, false);
                 break;
               case 27: // ESC
@@ -166,6 +167,9 @@
           link: function(scope, element, attrs) {
             scope.model = scope.$parent.$eval(attrs.inlineEdit);
             scope.isInputTextarea = attrs.hasOwnProperty('inlineEditTextarea');
+
+            scope.keepEnterSave = attrs.hasOwnProperty('keepEnterSave') ?
+              true : false;
 
             var onBlurBehavior = attrs.hasOwnProperty('inlineEditOnBlur') ?
               attrs.inlineEditOnBlur : InlineEditConfig.onBlur;
